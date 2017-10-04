@@ -10,7 +10,7 @@ import book.service.BookService;
 
 public class UpdateBookAction implements Action {
 	private Book book;
-	private String authorname;
+	private int authorID;
 	private String ISBN;
 	
 	
@@ -26,11 +26,11 @@ public class UpdateBookAction implements Action {
 	public void setBook(Book book) {
 		this.book = book;
 	}
-	public String getAuthorname() {
-		return authorname;
+	public int getAuthorID() {
+		return authorID;
 	}
-	public void setAuthorname(String authorname) {
-		this.authorname = authorname;
+	public void setAuthorID(int authorID) {
+		this.authorID = authorID;
 	}
 	@Override
 	public String execute() throws Exception {
@@ -39,13 +39,7 @@ public class UpdateBookAction implements Action {
 		System.out.println("成功进入UpdateBookAction ISBN=" + book.getISBN());
 		
 		BookService bs = new BookService();		
-		int i = bs.updateBook(book, authorname);
-		if (i == -2 ){
-			AuthorService as = new AuthorService();
-			int j = as.addAuthor(authorname);
-			if (j<0) return ERROR;
-			i = bs.updateBook(book, authorname);
-		}
+		int i = bs.updateBook(book, authorID);
 		
 		if (i<0) return ERROR;
 		return SUCCESS;

@@ -12,14 +12,6 @@
 	<rapid:block name="content">base_content</rapid:block>  
 	<br/>
 	
-	<%
-		String username;
-		if (session.getAttribute("username")!=null){
-			username = session.getAttribute("username").toString();
-		}else{
-			username = "";
-		}
-	%>
 	
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigetion">
 		<div class="container">
@@ -30,9 +22,9 @@
             <ul class="nav navbar-nav">
                 <li id=""><a href="<%=request.getContextPath()%>/index">主页</a></li>
                 <li id="view_books"><a href="<%=request.getContextPath()%>/book/viewAllBooks">查看图书</a></li>
-                <li id="add_book"><a href="<%=request.getContextPath()%>/book/addBook">添加图书</a></li>
+         
                 <li id="view_authors"><a href="<%=request.getContextPath()%>/book/viewAllAuthors">查看作者</a></li>
-                <li id="add_author"><a href="<%=request.getContextPath()%>/author/addAuthor">添加作者</a></li>    
+              
                 <li id="search_author"><a href="<%=request.getContextPath()%>/author/searchAuthor">查找作者</a></li>            
             </ul>
             

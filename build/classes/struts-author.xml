@@ -5,10 +5,7 @@
 
 <struts>
     <package name="author" extends="struts-default" namespace="/author">
-    	<action name="addAuthorPro" class="author.action.AddAuthorAction">
-    		<result>/WEB-INF/content/author/success.jsp</result>
-    		<result name="error">/WEB-INF/content/error.jsp</result>
-    	</action>
+    	
     	
     	<action name="viewAllAuthors" class="author.action.ViewAllAuthorsAction">
     		<result>/WEB-INF/content/author/listAuthors.jsp</result>
@@ -27,11 +24,7 @@
 			</result>
     	</action>
     	
-    	<action name="updateAuthor" class="author.action.UpdateAuthorAction">
-    		<result type="chain">viewAllAuthors</result>
-    		<result name="error">/WEB-INF/content/error.jsp</result>
-    	</action>
-		 
+    	
     	<action name="*">
     		<result>/WEB-INF/content/author/{1}.jsp</result>
     	</action>

@@ -21,7 +21,7 @@
 		<div class="form-gruop">
 			<label for="authorname" class="col-sm-2 control-label">作者</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control"  placeholder="请输入作者姓名" name="authorname"/><br/>
+				<input type="text" class="form-control"  placeholder="请输入作者ID" name="authorID"/><br/>
 			</div>
 		</div>
 		<div class="form-gruop">
@@ -33,7 +33,7 @@
 		<div class="form-gruop">
 			<label for="publishDate" class="col-sm-2 control-label">出版日期</label>
 			<div class="col-sm-10">
-				<input type="text" class="form-control"  placeholder="请输入出版日期" name="book.publishDate"/><br/>
+				<input type="text" class="form-control"  placeholder="请输入出版日期" name="book.Inidata"/><br/>
 			</div>
 		</div>
 		<div class="form-gruop">

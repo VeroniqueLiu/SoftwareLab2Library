@@ -5,10 +5,7 @@
 
 <struts>
     <package name="book" extends="struts-default" namespace="/book">
-    	<action name="addBookPro" class="book.action.AddBookAction">
-    		<result type="chain">viewAllBooks</result>
-    		<result name="error">/WEB-INF/content/error.jsp</result>
-    	</action>
+    	
     	
     	<action name="viewAllBooks" class="book.action.ViewAllBooksAction">
     		<result>/WEB-INF/content/book/listBooks.jsp</result> 

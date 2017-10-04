@@ -19,7 +19,7 @@
 				<th>姓名</th>
 				<th>国籍</th>
 				<th>年龄</th>
-				<th>操作</th>
+				
 			</tr>
 		</thead>
 		<tbody>
@@ -29,9 +29,7 @@
 					<td>${a.name}</td>
 					<td>${a.country}</td>
 					<td>${a.age}</td>
-					<td>
-						<a href='<s:url action="updateAuthorForm"><s:param name="id" value="#a.authorID"/></s:url>'><input type="button" value="更新"/></a>
-					</td>
+					
 				</tr>
 		</s:iterator>
 		</tbody>

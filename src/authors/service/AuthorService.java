@@ -11,13 +11,7 @@ public class AuthorService {
 	private Connect cont = new Connect();
 	private List<Author> authors;
 	private Author author;
-	public int addAuthor(Author author) {
-		//System.out.println("成功进入addAuthorService");
-		String sql = "insert into author(authorID, name, country, age) values(" + author.getAuthorID() + ",'" +
-				author.getName() + "','" + author.getCountry() + "','" + author.getAge() + "')";
-		int i = cont.executeUpdate(sql);
-		return i;
-	}
+	
 	public List<Author> getAllAuthors() {
 		authors = new ArrayList<>();
 		String sql = "select * from author";
@@ -82,11 +76,7 @@ public class AuthorService {
 		}
 		return author;
 	}
-	public int addAuthor(String name) {
-		String sql = "insert into author (name) values ('" + name + "')";
-		int i = cont.executeUpdate(sql);
-		return i;
-	}
+	
 	public Author getAuthor(int authorID) {
 		String sql = "select * from author where authorID='" + authorID + "'";
 		ResultSet result = cont.executeQuery(sql);
@@ -105,23 +95,5 @@ public class AuthorService {
 		}
 		return author;
 	}
-	public int updateAuthor(Author author, int id) {
-		String sql = "UPDATE author SET"; 
-		if (author.getName().length() > 0){
-			sql = sql + " name='" + author.getName() + "',"; 
-		}
-		if (author.getCountry().length() > 0){
-			sql = sql + " country='" + author.getCountry() + "',";
-		}
-		if (author.getAge() != 0){
-			sql = sql + " age=" + author.getAge() + ",";
-		}
-		if (sql.length() <= 17)
-			return 1;
-		sql = sql.substring(0, sql.length()-1);
-		sql = sql + " WHERE authorID='" + id + "'";
-		int i = cont.executeUpdate(sql);
-		//System.out.println("成功更新Author "+i+ " sql:"+sql);
-		return i;	
-	}
+	
 }

@@ -1,5 +1,6 @@
 package book.service;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,37 +14,7 @@ public class BookService {
 	private List<Book> books;
 	private Book book;
 	
-	public int addBook(Book book, String authorname){
-		AuthorService as = new AuthorService();
-		int authorID = -1;
-		try{
-			authorID= as.getAuthor(authorname).getAuthorID();
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		if (authorID<0) return -2;
-		book.setAuthorID(authorID);
-		String before = "insert into book(ISBN, title, authorID";
-		String sql = book.getISBN() + ",'" + 
-				book.getTitle() + "'," + book.getAuthorID();
-		if (book.getPublisher() != null){
-			before = before + ", publisher"; 
-			sql = sql + ",'" + book.getPublisher() + "'";
-		}
-		if (book.getPublishDate() != null){
-			before = before + ", publishDate";
-			sql = sql + ",'" + book.getPublishDate() + "'";
-		}
-		if (book.getPrice() != 0){
-			before = before + ", price";
-			sql = sql + "," + book.getPrice();
-		}
-		before = before + ") values(";
-		sql = before + sql + ")";
-		int i = cont.executeUpdate(sql);
-		//System.out.println("成功添加Book "+i+ " sql:"+sql);
-		return i;
-	}
+	
 	public List<Book> getAllBooks() {
 		books = new ArrayList<>();
 		String sql = "select * from book";
@@ -113,13 +84,13 @@ public class BookService {
 		//System.out.println("成功删除Book "+i+ " sql:"+sql);
 		return i;
 	}
-	public int updateBook(Book book, String authorname) {
+	public int updateBook(Book book, int authorid) {
 		AuthorService as = new AuthorService();
 		int authorID = -1;
 		
-		if (authorname.length() > 0){
+		if (authorid > 0){
 			try{
-				authorID= as.getAuthor(authorname).getAuthorID();
+				authorID= authorid;
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -128,17 +99,21 @@ public class BookService {
 		
 		book.setAuthorID(authorID);
 		String sql = "UPDATE book SET ";
+		if (book.getTitle().length() >0){
+			sql = sql + "Title='" + book.getTitle() + "',"; 
+		}
+		
 		if (book.getAuthorID() != -1){
-			sql = sql + "authorID=" + book.getAuthorID() + ","; 
+			sql = sql + "AuthorID=" + book.getAuthorID() + ","; 
 		}
 		if (book.getPublisher().length() > 0){
-			sql = sql + " publisher='" + book.getPublisher() + "',";
+			sql = sql + " Publisher='" + book.getPublisher() + "',";
 		}
 		if (book.getPublishDate() != null){
-			sql = sql + " publishDate='" + book.getPublishDate() + "',";
+			sql = sql + " PublishDate='" + book.getPublishDate() + "',";
 		}
 		if (book.getPrice() != 0){
-			sql = sql + " price=" + book.getPrice() + ",";
+			sql = sql + " Price=" + book.getPrice() + ",";
 		}
 		sql = sql.substring(0, sql.length()-1);
 		sql = sql + " WHERE ISBN='" + book.getISBN() + "'";
