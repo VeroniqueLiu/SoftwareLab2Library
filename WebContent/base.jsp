@@ -12,20 +12,19 @@
 	<rapid:block name="content">base_content</rapid:block>  
 	<br/>
 	
-	
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigetion">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Library 1.1</a>
+				<a class="navbar-brand" href="#">Welcome</a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbar-collapse-basepage">
             <ul class="nav navbar-nav">
-                <li id=""><a href="<%=request.getContextPath()%>/index">主页</a></li>
-                <li id="view_books"><a href="<%=request.getContextPath()%>/book/viewAllBooks">查看图书</a></li>
-         
-                <li id="view_authors"><a href="<%=request.getContextPath()%>/book/viewAllAuthors">查看作者</a></li>
-              
-                <li id="search_author"><a href="<%=request.getContextPath()%>/author/searchAuthor">查找作者</a></li>            
+                <li id=""><a href="<%=request.getContextPath()%>/index">HomePage</a></li>
+                <li id="view_books"><a href="<%=request.getContextPath()%>/book/viewAllBooks">ViewBooks</a></li>
+       
+                <li id="view_authors"><a href="<%=request.getContextPath()%>/book/viewAllAuthors">ViewAuthors</a></li>
+           
+                <li id="search_author"><a href="<%=request.getContextPath()%>/author/searchAuthor">Search</a></li>            
             </ul>
             
         </div>

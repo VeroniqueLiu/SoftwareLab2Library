@@ -5,30 +5,37 @@
 
 
 <rapid:override name="head">  
-    <title>查看所有作者</title>
+    <title>Author Info</title>
+   
 </rapid:override>
 <rapid:override name="content">
+<body >
+   <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="../image/back2.jpg" height="100%" width="100%"/>    
+</div> 
+</body>
 
 
 <div class="col-md-9 col-sm-11 table-center table-responsive">
 	<table class="table table-bordered table-hover ">
-		<h1>作者列表</h1><br/>
+	
+	<caption><font color=white ><h1>Author List</h1></font></caption>
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>姓名</th>
-				<th>国籍</th>
-				<th>年龄</th>
+				<th><font color=white >AuthorID</font></th>
+				<th><font color=white >AuthorName</font></th>
+				<th><font color=white >Country</font></th>
+				<th><font color=white >Age</font></th>
 				
 			</tr>
 		</thead>
 		<tbody>
 			<s:iterator  value="authors" var="a">
 				<tr>
-					<td>${a.authorID}</td>
-					<td>${a.name}</td>
-					<td>${a.country}</td>
-					<td>${a.age}</td>
+					<td><font color=white >${a.authorID}</font></td>
+					<td><font color=white >${a.name}</font></td>
+					<td><font color=white >${a.country}</font></td>
+					<td><font color=white >${a.age}</font></td>
 					
 				</tr>
 		</s:iterator>

@@ -8,10 +8,10 @@ public class Connect {
 	public Connect() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");			
-			//con = DriverManager.getConnection("jdbc:mysql://lbdzversckma.rds.sae.sina.com.cn:10611/librarydb?useSSL=false", "tmy", "SQL15984608166");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookDB?characterEncoding=utf8&useSSL=true","root","LSFqyhLRX*^%(&(&&");
+			
+			con = DriverManager.getConnection("jdbc:mysql://bkemzkqwywqz.mysql.sae.sina.com.cn:10646/bookdb?useSSL=false","root","LSFqyhLRX7977");
 			state = con.createStatement();	
-			//System.out.println("连接数据库成功");
+
 		} catch (Exception e) {
 			con = null;
 			System.out.println("Error");

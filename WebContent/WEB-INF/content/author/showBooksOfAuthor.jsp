@@ -5,8 +5,14 @@
 
 
 <rapid:override name="head">  
-    <title>查看作者所有的作品</title>
+    <title>Show All Books Written By Author</title>
 </rapid:override>
+<body >
+   <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="../image/back2.jpg" height="100%" width="100%"/>    
+</div> 
+</body>
+
 <rapid:override name="content">
 	<%
 		String authorname;
@@ -17,27 +23,27 @@
 		}
 	%>
 <div class="col-md-9 col-sm-11 table-center table-responsive">
-	<h1><%=authorname %>的所有书籍：</h1><br>
+	<h1><font color=white ><%=authorname %>All Books：</font></h1><br>
 	<table class="table table-bordered table-hover ">
 		<thead>
 			<tr>
-				<th>ISBN</th>
-				<th>书名</th>
-				<th>作者ID</th>
-				<th>出版商</th>
-				<th>出版日期</th>
-				<th>价格</th>
+				<th><font color=white >ISBN</font></th>
+				<th><font color=white >BookName</font></th>
+				<th><font color=white >AuthorID</font></th>
+				<th><font color=white >Publisher</font></th>
+				<th><font color=white >PublishDate</font></th>
+				<th><font color=white >Price</font></th>
 			</tr>
 		</thead>
 		<tbody>
 			<s:iterator  value="books" var="b">
 				<tr>
-					<td>${b.ISBN}</td>
-					<td>${b.title}</td>
-					<td>${b.authorID}</td>
-					<td>${b.publisher}</td>
-					<td>${b.publishDate}</td>
-					<td>${b.price}</td>
+					<td><font color=white >${b.ISBN}</font></td>
+					<td><font color=white >${b.title}</font></td>
+					<td><font color=white >${b.authorID}</font></td>
+					<td><font color=white >${b.publisher}</font></td>
+					<td><font color=white >${b.publishDate}</font></td>
+					<td><font color=white >${b.price}</font></td>
 				</tr>
 			</s:iterator>
 		</tbody>

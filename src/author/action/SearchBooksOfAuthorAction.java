@@ -55,18 +55,7 @@ public class SearchBooksOfAuthorAction implements Action {
 			}
 		}
 		
-//		int authorID=0;
-//		try{
-//			authorID = as.getAuthor(authorname).getAuthorID();
-//			if (authorID < 1){
-//				return ERROR;
-//			}
-//		}catch (Exception e) {
-//			return ERROR;
-//		}
-//		
-//		BookService bs = new BookService();
-//		books = bs.getBooks(authorID);		
+	
 		ActionContext actCtx = ActionContext.getContext();
 		Map<String, Object> sess = actCtx.getSession();
 		sess.put("authorname", authorname);

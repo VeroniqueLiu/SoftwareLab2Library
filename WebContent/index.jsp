@@ -3,19 +3,30 @@
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>  
 
 <rapid:override name="head">  
-    <title>主页</title>
+    <title>HomePage</title>
 </rapid:override>  
 <rapid:override name="content">  
-	<h1>Version 1.1的index</h1>
+
+<body >
+   <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="image/back2.jpg" height="100%" width="100%"/>    
+</div> 
+</body>
+	
     <div class="container table-center">
 		<ul class="row">
-		    <h2 class="text-center">Hello! Here is the index of tmylibrary~</h2><br/>
-		    <h2 class="text-center">If you have any question, please contact with me!</h2><br/>
-		    <h4 class="text-center">Email:<span class="text-info">hitnstmy@163.com</span></h4><br/>
-		    <h4 class="text-center">Github:<span class="text-info">https://github.com/nsada</span></h4><br/> 
-		    <h4 class="text-center">Blog:<span class="text-info">http://blog.csdn.net/tmy0131</span></h4><br/>		                
+		    <h1 class="text-center"> <font color=white >思凡的图书馆</font></h1><br/>
+		    <h4 class="text-center"> <font color=white >ViewBooks：展示所有图书，可以实现更新图书，查询详细信息，删除功能</font></h4><br/>
+		    <h4 class="text-center"> <font color=white >ViewAuthors：展示所有作者</font></h4><br/>
+		    <h4 class="text-center"> <font color=white >Search：搜索作者姓名查询相关书目信息</font></h4><br/> 
+		     <h6 class="text-center"> <font color=white >Contact me https://github.com/VeroniqueLiu , email 564788455@qq.com</font></h6><br/> 
+		    
+		                 
 		</ul>
     </div>
+    
+
+          
 </rapid:override>  
    
 <%@ include file="base.jsp" %>  
